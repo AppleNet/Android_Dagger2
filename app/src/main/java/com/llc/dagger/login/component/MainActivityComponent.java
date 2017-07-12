@@ -3,6 +3,7 @@ package com.llc.dagger.login.component;
 import com.llc.dagger.login.MainActivity;
 import com.llc.dagger.login.moudle.AbsPresenterMoudle;
 import com.llc.dagger.login.moudle.PresenterMoudle;
+import com.llc.dagger.register.RegisterActivity;
 
 import dagger.Component;
 import dagger.MembersInjector;
@@ -59,19 +60,22 @@ public interface MainActivityComponent {
 
     /* 第一种*/
     // 无参数 有返回值 返回注入的类型或者提供的类型
-    //ILoginPresenter injectMainActivity();
+    // TODO ILoginPresenter injectMainActivity();
+
     // 拓展 Provision methods, like typical injection sites, may use Provider or Lazy to more explicitly control provision requests
     // 规定方法，类似典型的injection sites 可以使用Provider或者lazy修饰 更准确的控制请求
-    //Lazy<ILoginPresenter> getLazyMainActivityInjector();
-    //Provider<ILoginPresenter> getProviderMainActivityInjector();
+    // TODO Lazy<ILoginPresenter> getLazyMainActivityInjector();
+    // TODO Provider<ILoginPresenter> getProviderMainActivityInjector();
 
 
     /*第二种*/
-
     // 有参数 void
     void injectMainactivity(MainActivity mainActivity);
+    void injectRegisterActivity(RegisterActivity registerActivity);
+
     // 有参数 返回参数类型的方法
     MainActivity injectMainActivity(MainActivity mainActivity);
+
     // 无参数 返回MembersInjector 等价于 有参数 void
     MembersInjector<MainActivity> getMainActivityInjector();
 

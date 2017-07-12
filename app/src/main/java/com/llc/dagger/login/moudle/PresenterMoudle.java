@@ -4,6 +4,7 @@ import com.llc.dagger.login.presenter.ILoginPresenter;
 import com.llc.dagger.login.presenter.impl.LoginPresenter;
 import com.llc.dagger.login.view.LoginView;
 import com.llc.dagger.login.view.LoginViewImpl;
+import com.llc.dagger.register.view.RegisterView;
 
 import dagger.Module;
 import dagger.Provides;
@@ -29,6 +30,11 @@ public class PresenterMoudle {
         this.loginView = loginView;
     }
 
+    RegisterView registerView;
+    public PresenterMoudle(RegisterView registerView){
+        this.registerView = registerView;
+    }
+
     /**
      *  1.@Provides 不能注解抽象方法，所有个人感觉写抽象类和普通类没什么区别
      *  2.@Provides 不能重复提供
@@ -36,10 +42,11 @@ public class PresenterMoudle {
      *  4.abstract class 不能为需求此moule的component提供set方法
      *  5.moudle注解抽象类的时候 编译不会报错，但是拿不到moudle的实例，所以不能 TODO 注解抽象类
      *  6.moudle中不能有方法的重载，否则报错 provideRegisterPresenter() provideRegisterPresenter(RegisterView registerView) 两种写法不行, 编译不通过
-     *  7.不能提供重复的对象 provideRegisterPresenter() provideRegisterPresenter(RegisterView registerView) provideRegisterPresenter2(RegisterView registerView) 三种写法都不行
+     *  7.@Provides 不能提供重复的对象 provideRegisterPresenter() provideRegisterPresenter(RegisterView registerView) provideRegisterPresenter2(RegisterView registerView) 三种写法都不行
      *    编译不通过 会报错这种错误叫依赖迷失，不知道提供那个实例。此时需要Qualifier（限定符） 来解决这个办法
      *  all-这样写没有意义
      *  8. 注入不能重复注入
+     *  9.@Provides 只可用于修饰非构造函数，并且该函数必须在Module内部
      *
      * */
 
@@ -79,7 +86,5 @@ public class PresenterMoudle {
     ILoginPresenter providePresenter2(LoginViewImpl loginView){
         return new LoginPresenter(loginView);
     }
-
-
 
 }

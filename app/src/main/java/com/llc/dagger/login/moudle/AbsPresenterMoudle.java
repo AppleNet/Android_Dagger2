@@ -28,7 +28,7 @@ import dagger.Provides;
  *  all-这样写没有意义
  * */
 @Module
-public abstract class AbsPresenterMoudle {
+public class AbsPresenterMoudle {
 
     private BaseView baseView;
 
@@ -42,6 +42,7 @@ public abstract class AbsPresenterMoudle {
 
     // 非抽象方法 无参数
     @Provides
+    @Named("presenterRegister")
     IRegisterPresenter provideRegisterPresenter(){
         return new RegisterPresenter((RegisterView) baseView);
     }
@@ -55,6 +56,7 @@ public abstract class AbsPresenterMoudle {
     // 1. 自动查找已有@Provides修饰的参数
     // 就会自动找到providesRegisterView 这个方法 拿到这个返回值传递进去
     @Provides
+    @Named("presenterRegister2")
     IRegisterPresenter provideRegisterPresenter2(RegisterView registerView){
         return new RegisterPresenter(registerView);
     }
@@ -63,8 +65,5 @@ public abstract class AbsPresenterMoudle {
     RegisterView providesRegisterView(){
         return (RegisterView) baseView;
     }
-
-    // 2. 通过无参或者有参数构造生成
-
 
 }

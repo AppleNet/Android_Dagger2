@@ -11,4 +11,5 @@ import com.llc.dagger.base.view.BaseView;
 
 
 public interface RegisterView extends BaseView {
+
 }

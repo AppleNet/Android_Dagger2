@@ -1,6 +1,7 @@
 package com.llc.dagger.login.moudle;
 
 import com.llc.dagger.login.model.LoginModel;
+import com.llc.dagger.register.model.RegisterModel;
 
 import dagger.Module;
 import dagger.Provides;
@@ -20,4 +21,8 @@ public class LoginMoudle {
         return new LoginModel();
     }
 
+    @Provides
+    RegisterModel provideRegisterModel(){
+        return new RegisterModel();
+    }
 }
