@@ -1,6 +1,7 @@
 package com.llc.dagger.login.component;
 
 import com.llc.dagger.login.MainActivity;
+import com.llc.dagger.login.moudle.AbsPresenterMoudle;
 import com.llc.dagger.login.moudle.PresenterMoudle;
 
 import dagger.Component;
@@ -20,7 +21,7 @@ import dagger.Component;
  *       1. 使用subcomponent
  *       2. 使用dependencies
  * */
-@Component(modules = {PresenterMoudle.class})
+@Component(modules = {AbsPresenterMoudle.class, PresenterMoudle.class})
 public abstract class AbsMainActivityComponent {
 
     abstract void getMainActivity(MainActivity mainActivity);

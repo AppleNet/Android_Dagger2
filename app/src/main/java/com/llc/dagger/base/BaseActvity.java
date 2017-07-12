@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.llc.dagger.base.presenter.BasePresenter;
+import com.llc.dagger.login.moudle.Named;
 
 import javax.inject.Inject;
 
@@ -27,6 +28,7 @@ public abstract class BaseActvity<P extends BasePresenter> extends AppCompatActi
      *
      * */
     @Inject
+    @Named("Presenter")
     protected P presenter;
 
     @Override

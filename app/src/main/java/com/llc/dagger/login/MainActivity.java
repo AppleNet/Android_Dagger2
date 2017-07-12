@@ -25,6 +25,7 @@ public class MainActivity extends BaseActvity<ILoginPresenter> implements LoginV
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DaggerMainActivityComponent.builder().presenterMoudle(new PresenterMoudle(this)).build().injectMainactivity(this);
+        // TODO sub component的调用方式
         //DaggerAbsMainActivityComponent.builder().presenterMoudle(new PresenterMoudle(this)).build().mainactivitySubComponent().build();
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -1,13 +1,10 @@
 package com.llc.dagger.login.component;
 
 import com.llc.dagger.login.MainActivity;
+import com.llc.dagger.login.moudle.AbsPresenterMoudle;
 import com.llc.dagger.login.moudle.PresenterMoudle;
-import com.llc.dagger.login.presenter.ILoginPresenter;
-
-import javax.inject.Provider;
 
 import dagger.Component;
-import dagger.Lazy;
 import dagger.MembersInjector;
 
 /**
@@ -53,7 +50,7 @@ import dagger.MembersInjector;
  *
  * */
 
-@Component(modules = PresenterMoudle.class)
+@Component(modules = {PresenterMoudle.class, AbsPresenterMoudle.class})
 public interface MainActivityComponent {
 
     /**
@@ -62,11 +59,11 @@ public interface MainActivityComponent {
 
     /* 第一种*/
     // 无参数 有返回值 返回注入的类型或者提供的类型
-    ILoginPresenter injectMainActivity();
+    //ILoginPresenter injectMainActivity();
     // 拓展 Provision methods, like typical injection sites, may use Provider or Lazy to more explicitly control provision requests
     // 规定方法，类似典型的injection sites 可以使用Provider或者lazy修饰 更准确的控制请求
-    Lazy<ILoginPresenter> getLazyMainActivityInjector();
-    Provider<ILoginPresenter> getProviderMainActivityInjector();
+    //Lazy<ILoginPresenter> getLazyMainActivityInjector();
+    //Provider<ILoginPresenter> getProviderMainActivityInjector();
 
 
     /*第二种*/

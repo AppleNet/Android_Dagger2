@@ -22,10 +22,22 @@ public class LoginPresenter implements ILoginPresenter {
     LoginModel loginModel;
     private LoginView loginView;
 
+    /*
+    *  有人习惯性的在这里加上@Inject 但是这个不是必须的。
+    *  1. 如果moudle中的provides没有提供实例，只是提供了参数需要的值，这个时候 需要@Inject注解 注入到构造方法上
+    *
+    * */
+
+    @Inject
+    public LoginPresenter(){
+
+    }
+
     public LoginPresenter(LoginView loginView){
         this.loginView = loginView;
         DaggerLoginPresenterComponent.builder().loginMoudle(new LoginMoudle()).build().injectModel(this);
     }
+
 
 
     @Override
