@@ -27,6 +27,7 @@ public class RegisterPresenter implements IRegisterPresenter {
     // 以后每次调用get方法会强制调用Moudle的Provides方法一次
     // 根据Provides具体实现不同，可能返回同一个对象，可能返回非同一个对象
     // 只有Provides的方法每次都创建新实例时，返回的对象不相同。
+    // 使用MembersInjector的时候 不能结合使用Provider 一起使用
     @Inject
     Provider<RegisterModel> model;
 

@@ -20,7 +20,7 @@ import com.llc.dagger.login.moudle.Named;
 import com.llc.dagger.login.moudle.PresenterMoudle;
 import com.llc.dagger.login.presenter.ILoginPresenter;
 import com.llc.dagger.login.view.LoginView;
-import com.llc.dagger.register.RegisterActivity;
+import com.llc.dagger.password.PasswordActivity;
 
 import javax.inject.Inject;
 
@@ -71,7 +71,8 @@ public class MainActivity extends BaseActvity<ILoginPresenter> implements LoginV
                 .subscribe(new Consumer<Object>() {
                     @Override
                     public void accept(@NonNull Object o) throws Exception {
-                        startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+                        //startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+                        startActivity(new Intent(MainActivity.this, PasswordActivity.class));
                     }
                 });
     }
