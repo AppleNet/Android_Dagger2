@@ -36,4 +36,22 @@ public class Password {
 
     public Password() {
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj){
+            return true;
+        }
+
+        if (obj == null) {
+            return false;
+        }
+
+        if (obj.getClass() == Password.class){
+            Password password = (Password) obj;
+            return id.equals(password.getId()) || pwd.equals(password.getPwd());
+        }
+
+        return false;
+    }
 }

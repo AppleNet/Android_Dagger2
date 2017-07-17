@@ -37,6 +37,7 @@ public class PwdMoudle {
      *   此行为将new Password("1", "123456") 添加到set集合中
      * */
     @Provides
+    @MySet("single")
     @IntoSet
     Password providePassword(){
         return new Password("1", "123456");
@@ -48,6 +49,7 @@ public class PwdMoudle {
      *  此行为sets.add(new Password("8", "123456"));将一个sets集合添加到另一个sets集合中
      * */
     @Provides
+    @MySet("double")
     @ElementsIntoSet
     Set<Password> providePasswords(){
         Set<Password> sets = new HashSet<>();
@@ -61,7 +63,6 @@ public class PwdMoudle {
         sets.add(new Password("8", "123456"));
         return sets;
     }
-
 
 
     @Provides
