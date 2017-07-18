@@ -20,6 +20,7 @@ public abstract class BaseActvity<P extends BasePresenter> extends AppCompatActi
 
 
     protected P presenter;
+    protected final String TAG = BaseActvity.class.getClass().getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
