@@ -14,13 +14,13 @@ import android.widget.TextView;
 import com.jakewharton.rxbinding2.view.RxView;
 import com.llc.dagger.R;
 import com.llc.dagger.base.BaseActvity;
+import com.llc.dagger.forget.ForgetActivity;
 import com.llc.dagger.login.component.DaggerMainActivityComponent;
 import com.llc.dagger.login.moudle.AbsPresenterMoudle;
 import com.llc.dagger.login.moudle.Named;
 import com.llc.dagger.login.moudle.PresenterMoudle;
 import com.llc.dagger.login.presenter.ILoginPresenter;
 import com.llc.dagger.login.view.LoginView;
-import com.llc.dagger.register.RegisterActivity;
 
 import javax.inject.Inject;
 
@@ -71,7 +71,8 @@ public class MainActivity extends BaseActvity<ILoginPresenter> implements LoginV
                 .subscribe(new Consumer<Object>() {
                     @Override
                     public void accept(@NonNull Object o) throws Exception {
-                        startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+                        //startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+                        startActivity(new Intent(MainActivity.this, ForgetActivity.class));
                         //startActivity(new Intent(MainActivity.this, PasswordActivity.class));
                     }
                 });

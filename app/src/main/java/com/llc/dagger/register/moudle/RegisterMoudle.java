@@ -96,7 +96,15 @@ public class RegisterMoudle {
 //    @ComplexKey(name = "abc", implementingClass = Named.class, thresholds = {1, 5, 10})
 //    RegisterBean provideRegisterBean6(){
 //        return new RegisterBean("2", MyEnum.Wade.toString());
-//    }
+//   }
+
+    /**
+     * 多重绑定
+     * 1. 添加一个由@Multibinds注解的抽象方法，该方法的返回值为声明的Set或者Map
+     * 2. Dagger从不实现或调用任何@Multibinds方法
+     * */
+    //@Multibinds
+    //abstract Set<RegisterBean> provideRegisterBean6();
 
     @Provides
     @Named("23")
