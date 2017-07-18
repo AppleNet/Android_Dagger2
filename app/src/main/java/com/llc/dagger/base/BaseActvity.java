@@ -25,7 +25,6 @@ public abstract class BaseActvity<P extends BasePresenter> extends AppCompatActi
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
